@@ -1,0 +1,781 @@
+{
+	"info": {
+		"_postman_id": "b1a3c3a8-fe32-42b5-9b06-aa4a6ace253f",
+		"name": "Report question",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13275790"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/report",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"report"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "Index",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/report",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"report"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:29:08 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:29:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"question_id\": 49,\n            \"student_id\": 5,\n            \"note\": \"I want to test Reports\",\n            \"created_at\": \"2023-09-13T13:24:11.000000Z\",\n            \"updated_at\": \"2023-09-13T13:24:11.000000Z\",\n            \"question\": {\n                \"id\": 49,\n                \"question\": \"Arrange the following numbers in ascending order\",\n                \"point\": 3,\n                \"allowed_duration\": 120,\n                \"is_reported\": 0,\n                \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"type\": 2\n            },\n            \"student\": {\n                \"id\": 5,\n                \"user_id\": 13,\n                \"speciality_id\": 1,\n                \"created_at\": null,\n                \"updated_at\": null,\n                \"user\": {\n                    \"id\": 13,\n                    \"first_name\": \"Ghaith\",\n                    \"middle_name\": \"Maher\",\n                    \"last_name\": \"Alrez\",\n                    \"user_tag\": \"ghaith5261\",\n                    \"phone\": \"0934255941\",\n                    \"verification_code\": null,\n                    \"phone_verified_at\": \"2023-09-11T16:45:18.000000Z\",\n                    \"remember_me\": 1,\n                    \"city_id\": 1,\n                    \"created_at\": \"2023-09-11T16:45:18.000000Z\",\n                    \"updated_at\": \"2023-09-11T16:45:18.000000Z\"\n                }\n            }\n        }\n    ],\n    \"message\": \"Reports Fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Index for question",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/report/question/49",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"report",
+						"question",
+						"49"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "Get data Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/report/question/49",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"report",
+								"question",
+								"49"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:30:42 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:30:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"question_id\": 49,\n            \"student_id\": 5,\n            \"note\": \"I want to test Reports\",\n            \"created_at\": \"2023-09-13T13:24:11.000000Z\",\n            \"updated_at\": \"2023-09-13T13:24:11.000000Z\",\n            \"student\": {\n                \"id\": 5,\n                \"user_id\": 13,\n                \"speciality_id\": 1,\n                \"created_at\": null,\n                \"updated_at\": null,\n                \"user\": {\n                    \"id\": 13,\n                    \"first_name\": \"Ghaith\",\n                    \"middle_name\": \"Maher\",\n                    \"last_name\": \"Alrez\",\n                    \"user_tag\": \"ghaith5261\",\n                    \"phone\": \"0934255941\",\n                    \"verification_code\": null,\n                    \"phone_verified_at\": \"2023-09-11T16:45:18.000000Z\",\n                    \"remember_me\": 1,\n                    \"city_id\": 1,\n                    \"created_at\": \"2023-09-11T16:45:18.000000Z\",\n                    \"updated_at\": \"2023-09-11T16:45:18.000000Z\"\n                }\n            }\n        }\n    ],\n    \"message\": \"Reports Fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Index for student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/report/student/5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"report",
+						"student",
+						"5"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "Get data Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/report/student/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"report",
+								"student",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:29:58 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:29:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "55"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"question_id\": 49,\n            \"student_id\": 5,\n            \"note\": \"I want to test Reports\",\n            \"created_at\": \"2023-09-13T13:24:11.000000Z\",\n            \"updated_at\": \"2023-09-13T13:24:11.000000Z\",\n            \"question\": {\n                \"id\": 49,\n                \"question\": \"Arrange the following numbers in ascending order\",\n                \"point\": 3,\n                \"allowed_duration\": 120,\n                \"is_reported\": 0,\n                \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"type\": 2\n            }\n        }\n    ],\n    \"message\": \"Reports Fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Store report",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "question_id",
+							"value": "49",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "I want to test Reports ",
+							"description": "Not required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/report/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"report",
+						""
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "Store report",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "question_id",
+									"value": "49",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "I want to test Reports ",
+									"description": "Not required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/report/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"report",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:24:11 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:24:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"question_id\": \"49\",\n        \"note\": \"I want to test Reports\",\n        \"student_id\": 5,\n        \"updated_at\": \"2023-09-13T13:24:11.000000Z\",\n        \"created_at\": \"2023-09-13T13:24:11.000000Z\",\n        \"id\": 4\n    },\n    \"message\": \"Report added successfully\"\n}"
+				},
+				{
+					"name": "Store report",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "question_id",
+									"value": "49",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "I want to test Reports ",
+									"description": "Not required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/report/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"report",
+								""
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:27:52 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:27:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"You already Report this question\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete report",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/report/3",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"report",
+						"3"
+					]
+				},
+				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+			},
+			"response": [
+				{
+					"name": "Delete report",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/report/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"report",
+								"1"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:28:01 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:28:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Report deleted successfully\"\n}"
+				},
+				{
+					"name": "Delete report",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/report/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"report",
+								"3"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:32:00 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 13:32:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not Found report\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,2806 @@
+{
+	"info": {
+		"_postman_id": "13b33f3a-bd85-4956-a473-d7e4fbf76cb9",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13275790"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Index favorite quiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{studentToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/favorite/quiz",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"favorite",
+								"quiz"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Index favorite",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/favorite/quiz",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"favorite",
+										"quiz"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Sep 2023 17:25:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Sep 2023 17:25:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 47,\n            \"quiz\": \"test\",\n            \"rate\": 4.5,\n            \"question_id\": 49,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"question\": {\n                \"id\": 49,\n                \"question\": \"Arrange the following numbers in ascending order\",\n                \"point\": 3,\n                \"allowed_duration\": 120,\n                \"is_reported\": 0,\n                \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"type\": 2,\n                \"order\": [\n                    {\n                        \"id\": 13,\n                        \"sentence\": \"3\",\n                        \"order\": 2,\n                        \"question_id\": 49,\n                        \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                        \"updated_at\": \"2023-09-12T10:54:36.000000Z\"\n                    },\n                    {\n                        \"id\": 14,\n                        \"sentence\": \"2\",\n                        \"order\": 1,\n                        \"question_id\": 49,\n                        \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                        \"updated_at\": \"2023-09-12T10:54:36.000000Z\"\n                    },\n                    {\n                        \"id\": 15,\n                        \"sentence\": \"9\",\n                        \"order\": 3,\n                        \"question_id\": 49,\n                        \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                        \"updated_at\": \"2023-09-12T10:54:36.000000Z\"\n                    }\n                ]\n            }\n        },\n        {\n            \"id\": 48,\n            \"quiz\": \"test2\",\n            \"rate\": 4.52,\n            \"question_id\": 50,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n            \"updated_at\": \"2023-09-12T10:59:35.000000Z\",\n            \"question\": {\n                \"id\": 50,\n                \"question\": \"What is value of gravity\",\n                \"point\": 2,\n                \"allowed_duration\": 100,\n                \"is_reported\": 0,\n                \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n                \"updated_at\": \"2023-09-12T17:25:20.000000Z\",\n                \"type\": 3,\n                \"multiple_choice\": [\n                    {\n                        \"id\": 41,\n                        \"choice\": \"8.4\",\n                        \"is_correct\": 0,\n                        \"question_id\": 50,\n                        \"created_at\": \"2023-09-12T17:25:20.000000Z\",\n                        \"updated_at\": \"2023-09-12T17:25:20.000000Z\"\n                    },\n                    {\n                        \"id\": 42,\n                        \"choice\": \"9.3\",\n                        \"is_correct\": 0,\n                        \"question_id\": 50,\n                        \"created_at\": \"2023-09-12T17:25:20.000000Z\",\n                        \"updated_at\": \"2023-09-12T17:25:20.000000Z\"\n                    },\n                    {\n                        \"id\": 43,\n                        \"choice\": \"10.5\",\n                        \"is_correct\": 0,\n                        \"question_id\": 50,\n                        \"created_at\": \"2023-09-12T17:25:20.000000Z\",\n                        \"updated_at\": \"2023-09-12T17:25:20.000000Z\"\n                    },\n                    {\n                        \"id\": 44,\n                        \"choice\": \"9.8\",\n                        \"is_correct\": 1,\n                        \"question_id\": 50,\n                        \"created_at\": \"2023-09-12T17:25:20.000000Z\",\n                        \"updated_at\": \"2023-09-12T17:25:20.000000Z\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"message\": \"Favorite quizzes fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Index favorite Collection",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{studentToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/favorite/collection",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"favorite",
+								"collection"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Index favorite Collection",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/favorite/collection",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"favorite",
+										"collection"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Sep 2023 18:50:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 12 Sep 2023 18:50:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"collection\": \"Hello world\",\n            \"rate\": 4.2,\n            \"tips\": \"Use calculator\",\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T17:58:05.000000Z\",\n            \"updated_at\": \"2023-09-12T17:58:05.000000Z\",\n            \"quizzes\": [\n                {\n                    \"id\": 47,\n                    \"quiz\": \"test\",\n                    \"rate\": 4.5,\n                    \"question_id\": 49,\n                    \"teacher_id\": 4,\n                    \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                    \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                    \"pivot\": {\n                        \"collection_id\": 5,\n                        \"quiz_id\": 47\n                    },\n                    \"question\": {\n                        \"id\": 49,\n                        \"question\": \"Arrange the following numbers in ascending order\",\n                        \"point\": 3,\n                        \"allowed_duration\": 120,\n                        \"is_reported\": 0,\n                        \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                        \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                        \"type\": 2\n                    }\n                }\n            ],\n            \"subjects\": [\n                {\n                    \"id\": 1,\n                    \"subject\": \"ثقافة عامة\",\n                    \"speciality_id\": 1,\n                    \"created_at\": \"2023-09-12T17:55:53.000000Z\",\n                    \"updated_at\": \"2023-09-12T17:55:53.000000Z\",\n                    \"pivot\": {\n                        \"collection_id\": 5,\n                        \"subject_id\": 1\n                    }\n                }\n            ]\n        }\n    ],\n    \"message\": \"Favorite collections fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Follow teacher (toggle)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student2Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/follow/teacher/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"follow",
+								"teacher",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Follow teacher",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/follow/teacher/4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"follow",
+										"teacher",
+										"4"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 14:18:38 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 14:18:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Teacher Followed successfully\"\n}"
+						},
+						{
+							"name": "Unfollow teacher",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/follow/teacher/4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"follow",
+										"teacher",
+										"4"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 14:21:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 14:21:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Teacher unfollowed successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Index following",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{studentToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/follow/following/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"follow",
+								"following",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Index following",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/follow/following/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"follow",
+										"following",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:27:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:27:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"about\": \"Hello world\",\n            \"is_approved\": 0,\n            \"user_id\": 15,\n            \"speciality_id\": 1,\n            \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"updated_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"pivot\": {\n                \"student_id\": 5,\n                \"teacher_id\": 4,\n                \"created_at\": \"2023-09-13T10:20:41.000000Z\",\n                \"updated_at\": \"2023-09-13T10:20:41.000000Z\"\n            },\n            \"user\": {\n                \"id\": 15,\n                \"first_name\": \"Ghaith\",\n                \"middle_name\": \"Maher\",\n                \"last_name\": \"Alrez\",\n                \"user_tag\": \"ghaith526\",\n                \"phone\": \"0934255942\",\n                \"verification_code\": null,\n                \"phone_verified_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"remember_me\": 1,\n                \"city_id\": 1,\n                \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"updated_at\": \"2023-09-11T16:46:38.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"Following teachers fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get my points in subejct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student2Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/student/point-in-subject/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"point-in-subject",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get my points in subejct",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/student/point-in-subject/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"point-in-subject",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:49:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:49:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": 0,\n    \"message\": \"Points fetched successfully\"\n}"
+						},
+						{
+							"name": "Get my points in subejct",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/student/point-in-subject/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"point-in-subject",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:49:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:49:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": 18,\n    \"message\": \"Points fetched successfully\"\n}"
+						},
+						{
+							"name": "Get my points in subejct error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/student/point-in-subject/3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"point-in-subject",
+										"3"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:51:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:51:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Student is not take this subject\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Take subject (not necessary )",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student2Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/student/take-subject/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"take-subject",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Take subject",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/student/take-subject/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"take-subject",
+										"2"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:56:45 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:56:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"subject taken successfully\"\n}"
+						},
+						{
+							"name": "Take subject",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/student/take-subject/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"take-subject",
+										"2"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:58:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:58:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Already taken\"\n}"
+						},
+						{
+							"name": "Take subject",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/student/take-subject/23",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"student",
+										"take-subject",
+										"23"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:58:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Sep 2023 07:58:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not found subject\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "Index teachers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{studentToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Index teachers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:41:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:41:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"about\": \"Hello world\",\n            \"is_approved\": 0,\n            \"user_id\": 15,\n            \"speciality_id\": 1,\n            \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"updated_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"is_followed\": false,\n            \"user\": {\n                \"id\": 15,\n                \"first_name\": \"Ghaith\",\n                \"middle_name\": \"Maher\",\n                \"last_name\": \"Alrez\",\n                \"user_tag\": \"ghaith526\",\n                \"phone\": \"0934255942\",\n                \"verification_code\": null,\n                \"phone_verified_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"remember_me\": 1,\n                \"city_id\": 1,\n                \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"updated_at\": \"2023-09-11T16:46:38.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"Teachers fetched successfully\"\n}"
+						},
+						{
+							"name": "Index teachers and add if teacher followed by user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:41:21 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:41:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"about\": \"Hello world\",\n            \"is_approved\": 0,\n            \"user_id\": 15,\n            \"speciality_id\": 1,\n            \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"updated_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"is_followed\": true,\n            \"user\": {\n                \"id\": 15,\n                \"first_name\": \"Ghaith\",\n                \"middle_name\": \"Maher\",\n                \"last_name\": \"Alrez\",\n                \"user_tag\": \"ghaith526\",\n                \"phone\": \"0934255942\",\n                \"verification_code\": null,\n                \"phone_verified_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"remember_me\": 1,\n                \"city_id\": 1,\n                \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"updated_at\": \"2023-09-11T16:46:38.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"Teachers fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Index followers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{teacherToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/follow/followers/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"follow",
+								"followers",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Index followers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/follow/followers/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"follow",
+										"followers",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:33:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:33:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"user_id\": 13,\n            \"speciality_id\": 1,\n            \"created_at\": null,\n            \"updated_at\": null,\n            \"pivot\": {\n                \"teacher_id\": 4,\n                \"student_id\": 5,\n                \"created_at\": \"2023-09-13T10:20:41.000000Z\",\n                \"updated_at\": \"2023-09-13T10:20:41.000000Z\"\n            },\n            \"user\": {\n                \"id\": 13,\n                \"first_name\": \"Ghaith\",\n                \"middle_name\": \"Maher\",\n                \"last_name\": \"Alrez\",\n                \"user_tag\": \"ghaith5261\",\n                \"phone\": \"0934255941\",\n                \"verification_code\": null,\n                \"phone_verified_at\": \"2023-09-11T16:45:18.000000Z\",\n                \"remember_me\": 1,\n                \"city_id\": 1,\n                \"created_at\": \"2023-09-11T16:45:18.000000Z\",\n                \"updated_at\": \"2023-09-11T16:45:18.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"Followers fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show teacher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{studentToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show teahcer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:44:04 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:44:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"about\": \"Hello world\",\n        \"is_approved\": 0,\n        \"user_id\": 15,\n        \"speciality_id\": 1,\n        \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n        \"updated_at\": \"2023-09-11T16:46:38.000000Z\",\n        \"is_followed\": true,\n        \"user\": {\n            \"id\": 15,\n            \"first_name\": \"Ghaith\",\n            \"middle_name\": \"Maher\",\n            \"last_name\": \"Alrez\",\n            \"user_tag\": \"ghaith526\",\n            \"phone\": \"0934255942\",\n            \"verification_code\": null,\n            \"phone_verified_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"remember_me\": 1,\n            \"city_id\": 1,\n            \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"updated_at\": \"2023-09-11T16:46:38.000000Z\"\n        }\n    },\n    \"message\": \"Teacher fetched successfully\"\n}"
+						},
+						{
+							"name": "Show teacher where not followed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:44:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 10:44:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"about\": \"Hello world\",\n        \"is_approved\": 0,\n        \"user_id\": 15,\n        \"speciality_id\": 1,\n        \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n        \"updated_at\": \"2023-09-11T16:46:38.000000Z\",\n        \"is_followed\": false,\n        \"user\": {\n            \"id\": 15,\n            \"first_name\": \"Ghaith\",\n            \"middle_name\": \"Maher\",\n            \"last_name\": \"Alrez\",\n            \"user_tag\": \"ghaith526\",\n            \"phone\": \"0934255942\",\n            \"verification_code\": null,\n            \"phone_verified_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"remember_me\": 1,\n            \"city_id\": 1,\n            \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"updated_at\": \"2023-09-11T16:46:38.000000Z\"\n        }\n    },\n    \"message\": \"Teacher fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get teachers in specality",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{studentToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/teacher/speciality/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"speciality",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get teachers in specality",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/teacher/speciality/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"speciality",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 12:46:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 12:46:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"about\": \"Hello world\",\n        \"is_approved\": 0,\n        \"user_id\": 15,\n        \"speciality_id\": 1,\n        \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n        \"updated_at\": \"2023-09-11T16:46:38.000000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Search For teacher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{studentToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/search/?name=Mah",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Mah"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search For teacher",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/search/?name=Ghaith Maher Alrez",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Ghaith Maher Alrez"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 14:05:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 14:05:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"about\": \"Hello world\",\n            \"is_approved\": 0,\n            \"user_id\": 15,\n            \"speciality_id\": 1,\n            \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"updated_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"user\": {\n                \"id\": 15,\n                \"first_name\": \"Ghaith\",\n                \"middle_name\": \"Maher\",\n                \"last_name\": \"Alrez\",\n                \"user_tag\": \"ghaith526\",\n                \"phone\": \"0934255942\",\n                \"verification_code\": null,\n                \"phone_verified_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"remember_me\": 1,\n                \"city_id\": 1,\n                \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"updated_at\": \"2023-09-11T16:46:38.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"Teachers Fetched successfully\"\n}"
+						},
+						{
+							"name": "Search For teacher",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/search/?name=Gha",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Gha"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 14:08:04 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Sep 2023 14:08:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"about\": \"Hello world\",\n            \"is_approved\": 0,\n            \"user_id\": 15,\n            \"speciality_id\": 1,\n            \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"updated_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"user\": {\n                \"id\": 15,\n                \"first_name\": \"Ghaith\",\n                \"middle_name\": \"Maher\",\n                \"last_name\": \"Alrez\",\n                \"user_tag\": \"ghaith526\",\n                \"phone\": \"0934255942\",\n                \"verification_code\": null,\n                \"phone_verified_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"remember_me\": 1,\n                \"city_id\": 1,\n                \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"updated_at\": \"2023-09-11T16:46:38.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"Teachers Fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show all unapproved teachers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/unApproved",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"unApproved"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show all unapproved teachers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/unApproved",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"unApproved"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Sep 2023 11:45:38 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Sep 2023 11:45:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"about\": \"Hello world\",\n            \"is_approved\": 0,\n            \"user_id\": 15,\n            \"speciality_id\": 1,\n            \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"updated_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"user\": {\n                \"id\": 15,\n                \"first_name\": \"Ghaith\",\n                \"middle_name\": \"Maher\",\n                \"last_name\": \"Alrez\",\n                \"user_tag\": \"ghaith526\",\n                \"phone\": \"0934255942\",\n                \"verification_code\": null,\n                \"phone_verified_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"remember_me\": 1,\n                \"city_id\": 1,\n                \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"updated_at\": \"2023-09-11T16:46:38.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"UnApproved teachers fetched successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Approve teacher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/teacher/approve/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"teacher",
+								"approve",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Approve teacher",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/teacher/approve/4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"teacher",
+										"approve",
+										"4"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Sep 2023 11:46:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Sep 2023 11:46:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Teacher Approved successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get My profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/user/my-profile",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"my-profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get My profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/user/my-profile",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"my-profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Sep 2023 15:12:12 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Sep 2023 15:12:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"first_name\": \"Ghaith\",\n        \"middle_name\": \"Maher\",\n        \"last_name\": \"Alrez\",\n        \"user_tag\": \"ghaith526\",\n        \"phone\": \"0934255942\",\n        \"verification_code\": null,\n        \"phone_verified_at\": \"2023-09-04T13:35:36.000000Z\",\n        \"remember_me\": 1,\n        \"created_at\": \"2023-09-04T13:35:36.000000Z\",\n        \"updated_at\": \"2023-09-04T13:35:36.000000Z\"\n    },\n    \"message\": \"User fetched\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Ahmad",
+							"type": "text"
+						},
+						{
+							"key": "middle_name",
+							"value": "Bahjat",
+							"description": "Not required",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Aboadas",
+							"type": "text"
+						},
+						{
+							"key": "user_tag",
+							"value": "ahmad526",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "0935666666",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "remember_me",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "city_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "teacher[about]",
+							"value": "Hello world",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "teacher[speciality_id]",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "student[speciality_id]",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/user/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Ghaith",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Alrez",
+									"type": "text"
+								},
+								{
+									"key": "middle_name",
+									"value": "Maher",
+									"description": "Not required",
+									"type": "text"
+								},
+								{
+									"key": "user_tag",
+									"value": "ghaith526",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0934255942",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "remember_me",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "teacher[about]",
+									"value": "Hello world",
+									"type": "text"
+								},
+								{
+									"key": "teacher[speciality_id]",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/user/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Sep 2023 16:30:51 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Sep 2023 16:30:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "56"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": 9,\n            \"first_name\": \"Ghaith\",\n            \"middle_name\": \"Maher\",\n            \"last_name\": \"Alrez\",\n            \"user_tag\": \"ghaith526\",\n            \"phone\": \"0934255942\",\n            \"verification_code\": null,\n            \"phone_verified_at\": \"2023-09-11T16:30:51.000000Z\",\n            \"remember_me\": 1,\n            \"city_id\": 1,\n            \"created_at\": \"2023-09-11T16:30:51.000000Z\",\n            \"updated_at\": \"2023-09-11T16:30:51.000000Z\"\n        },\n        \"token\": \"3|laravel_sanctum_dSt3HIrBJvhAmoFcHNRDmor4MqBezIPlaupEN5T151addd06\",\n        \"role\": {\n            \"about\": \"Hello world\",\n            \"speciality_id\": \"1\",\n            \"user_id\": 9,\n            \"updated_at\": \"2023-09-11T16:30:51.000000Z\",\n            \"created_at\": \"2023-09-11T16:30:51.000000Z\",\n            \"id\": 3\n        }\n    },\n    \"message\": \"User registered successfully\"\n}"
+				},
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Ghaith",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Alrez",
+									"type": "text"
+								},
+								{
+									"key": "middle_name",
+									"value": "Maher",
+									"description": "Not required",
+									"type": "text"
+								},
+								{
+									"key": "user_tag",
+									"value": "ghaith526",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0934255942",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "remember_me",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "teacher[about]",
+									"value": "Hello world",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "teacher[speciality_id]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "student[speciality_id]",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/user/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Sep 2023 16:46:23 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Sep 2023 16:46:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": 14,\n            \"first_name\": \"Ghaith\",\n            \"middle_name\": \"Maher\",\n            \"last_name\": \"Alrez\",\n            \"user_tag\": \"ghaith526\",\n            \"phone\": \"0934255942\",\n            \"verification_code\": null,\n            \"phone_verified_at\": \"2023-09-11T16:46:23.000000Z\",\n            \"remember_me\": 1,\n            \"city_id\": 1,\n            \"created_at\": \"2023-09-11T16:46:23.000000Z\",\n            \"updated_at\": \"2023-09-11T16:46:23.000000Z\"\n        },\n        \"token\": \"6|laravel_sanctum_DxxK09hE8tl5OeVLidpABCOHwCd5pyrzxUoZDRyQ0b4f958a\",\n        \"role\": {\n            \"speciality_id\": \"1\",\n            \"user_id\": 14,\n            \"updated_at\": \"2023-09-11T16:46:23.000000Z\",\n            \"created_at\": \"2023-09-11T16:46:23.000000Z\",\n            \"id\": 4\n        }\n    },\n    \"message\": \"User registered successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone",
+							"value": "0934255941",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "user_tag",
+							"value": "ghaith526",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/user/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "0934255942",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/user/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Sep 2023 13:35:51 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Sep 2023 13:35:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "56"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"access_token\": \"3|laravel_sanctum_JVzbFC7Z7PyxbcXaCJOndAZhuoWAJXpxXuPMLA7F11ea2743\",\n        \"user\": {\n            \"id\": 2,\n            \"first_name\": \"Ghaith\",\n            \"middle_name\": \"Maher\",\n            \"last_name\": \"Alrez\",\n            \"user_tag\": \"ghaith526\",\n            \"phone\": \"0934255942\",\n            \"verification_code\": null,\n            \"phone_verified_at\": \"2023-09-04T13:35:36.000000Z\",\n            \"remember_me\": 1,\n            \"created_at\": \"2023-09-04T13:35:36.000000Z\",\n            \"updated_at\": \"2023-09-04T13:35:36.000000Z\"\n        }\n    },\n    \"message\": \"Logged in\"\n}"
+				},
+				{
+					"name": "Login by user tag",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "0934255941",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "user_tag",
+									"value": "ghaith526",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/user/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 14:57:31 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 14:57:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"access_token\": \"9|laravel_sanctum_cJ5ZaOpVCW42PdrDqEQZXXnfeqy1STs3ev1V3YlC53b789c1\",\n        \"user\": {\n            \"id\": 15,\n            \"first_name\": \"Ghaith\",\n            \"middle_name\": \"Maher\",\n            \"last_name\": \"Alrez\",\n            \"user_tag\": \"ghaith526\",\n            \"phone\": \"0934255942\",\n            \"verification_code\": null,\n            \"phone_verified_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"remember_me\": 1,\n            \"city_id\": 1,\n            \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n            \"updated_at\": \"2023-09-11T16:46:38.000000Z\"\n        }\n    },\n    \"message\": \"Logged in\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/user/logout",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Logout",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/user/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Sep 2023 15:12:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Sep 2023 15:12:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Logged out\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete my account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|laravel_sanctum_qzS3sGthJJ2PlvNdXAwcOI29sT6gfrpVcuT5oiGzd75db517",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/user/delete-my-account",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"delete-my-account"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete my account",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/user/delete-my-account",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"delete-my-account"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Sep 2023 15:15:17 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Sep 2023 15:15:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,2589 @@
+{
+	"info": {
+		"_postman_id": "7f18772a-7dad-4596-a527-2de33d483e7f",
+		"name": "Quiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13275790"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/quiz",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Index",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/quiz/30",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"30"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 08:26:59 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 08:26:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 30,\n        \"quiz\": \"test\",\n        \"rate\": 4.5,\n        \"question_id\": 30,\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T07:30:16.000000Z\",\n        \"updated_at\": \"2023-09-12T07:30:16.000000Z\",\n        \"question\": {\n            \"id\": 30,\n            \"question\": \"Where is Ahmad\",\n            \"point\": 2,\n            \"allowed_duration\": 120,\n            \"is_reported\": 0,\n            \"created_at\": \"2023-09-12T07:30:16.000000Z\",\n            \"updated_at\": \"2023-09-12T07:30:16.000000Z\",\n            \"type\": 1,\n            \"fill_blank\": [\n                {\n                    \"id\": 41,\n                    \"sentence\": \"Ahmad go to the **    **\",\n                    \"blank\": \"park\",\n                    \"question_id\": 30,\n                    \"created_at\": \"2023-09-12T07:30:16.000000Z\",\n                    \"updated_at\": \"2023-09-12T07:30:16.000000Z\"\n                },\n                {\n                    \"id\": 42,\n                    \"sentence\": \"And he drinks **   **\",\n                    \"blank\": \"water\",\n                    \"question_id\": 30,\n                    \"created_at\": \"2023-09-12T07:30:16.000000Z\",\n                    \"updated_at\": \"2023-09-12T07:30:16.000000Z\"\n                }\n            ]\n        }\n    },\n    \"message\": \"Fetched successfully\"\n}"
+				},
+				{
+					"name": "Index",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/quiz/30",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"30"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 09:47:15 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 09:47:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add quiz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{teacherToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "rate",
+							"value": "4.5",
+							"type": "text"
+						},
+						{
+							"key": "question",
+							"value": "Arrange the following numbers in ascending order",
+							"type": "text"
+						},
+						{
+							"key": "point",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "allowed_duration",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "2",
+							"description": "1=> fill blank, 2=> order, 3=> MCQ",
+							"type": "text"
+						},
+						{
+							"key": "subject_id",
+							"value": "1",
+							"description": "nullable (that only when quiz is not belong to any collection)",
+							"type": "text"
+						},
+						{
+							"key": "multipleChoice[0][choice]",
+							"value": "8.4",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "multipleChoice[0][is_correct]",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "multipleChoice[1][choice]",
+							"value": "9.3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "multipleChoice[1][is_correct]",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "multipleChoice[2][choice]",
+							"value": "10.5",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "multipleChoice[2][is_correct]",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "multipleChoice[3][choice]",
+							"value": "9.8",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "multipleChoice[3][is_correct]",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "fillBlank[0][sentence]",
+							"value": "Ahmad go to the **    **",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "fillBlank[0][blank]",
+							"value": "park",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "fillBlank[1][sentence]",
+							"value": "And he drinks **   ** ",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "fillBlank[1][blank]",
+							"value": "water",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "order[0][sentence]",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "order[0][order]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "order[1][sentence]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "order[1][order]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "order[2][sentence]",
+							"value": "9",
+							"type": "text"
+						},
+						{
+							"key": "order[2][order]",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/quiz/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add quiz fillBlank",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "4.5",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "Where is Ahmad",
+									"type": "text"
+								},
+								{
+									"key": "point",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "allowed_duration",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "1",
+									"description": "1=> fill blank, 2=> order, 3=> MCQ",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[0][choice]",
+									"value": "8.4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[0][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[1][choice]",
+									"value": "9.3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[1][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[2][choice]",
+									"value": "10.5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[2][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[3][choice]",
+									"value": "9.8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[3][is_correct]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[0][sentence]",
+									"value": "Ahmad go to the **    **",
+									"type": "text"
+								},
+								{
+									"key": "fillBlank[0][blank]",
+									"value": "park",
+									"type": "text"
+								},
+								{
+									"key": "fillBlank[1][sentence]",
+									"value": "And he drinks **   ** ",
+									"type": "text"
+								},
+								{
+									"key": "fillBlank[1][blank]",
+									"value": "water",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/quiz/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 08:16:26 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 08:16:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 41,\n        \"quiz\": \"test\",\n        \"rate\": 4.5,\n        \"question_id\": 41,\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T08:16:26.000000Z\",\n        \"updated_at\": \"2023-09-12T08:16:26.000000Z\",\n        \"question\": {\n            \"id\": 41,\n            \"question\": \"Where is Ahmad\",\n            \"point\": 2,\n            \"allowed_duration\": 120,\n            \"is_reported\": 0,\n            \"created_at\": \"2023-09-12T08:16:26.000000Z\",\n            \"updated_at\": \"2023-09-12T08:16:26.000000Z\",\n            \"type\": 1,\n            \"fill_blank\": [\n                {\n                    \"id\": 63,\n                    \"sentence\": \"Ahmad go to the **    **\",\n                    \"blank\": \"park\",\n                    \"question_id\": 41,\n                    \"created_at\": \"2023-09-12T08:16:26.000000Z\",\n                    \"updated_at\": \"2023-09-12T08:16:26.000000Z\"\n                },\n                {\n                    \"id\": 64,\n                    \"sentence\": \"And he drinks **   **\",\n                    \"blank\": \"water\",\n                    \"question_id\": 41,\n                    \"created_at\": \"2023-09-12T08:16:26.000000Z\",\n                    \"updated_at\": \"2023-09-12T08:16:26.000000Z\"\n                }\n            ]\n        }\n    },\n    \"message\": \"ok\"\n}"
+				},
+				{
+					"name": "Add quiz MCQ",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "4.5",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "What is the value of gravity?",
+									"type": "text"
+								},
+								{
+									"key": "point",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "allowed_duration",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "3",
+									"description": "1=> fill blank, 2=> order, 3=> MCQ",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[0][choice]",
+									"value": "8.4",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[0][is_correct]",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[1][choice]",
+									"value": "9.3",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[1][is_correct]",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[2][choice]",
+									"value": "10.5",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[2][is_correct]",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[3][choice]",
+									"value": "9.8",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[3][is_correct]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "fillBlank[0][sentence]",
+									"value": "Ahmad go to the **    **",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[0][blank]",
+									"value": "park",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[1][sentence]",
+									"value": "And he drinks **   ** ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[1][blank]",
+									"value": "water",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/quiz/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 08:18:12 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 08:18:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 43,\n        \"quiz\": \"test\",\n        \"rate\": 4.5,\n        \"question_id\": 43,\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T08:18:12.000000Z\",\n        \"updated_at\": \"2023-09-12T08:18:12.000000Z\",\n        \"question\": {\n            \"id\": 43,\n            \"question\": \"Where is Ahmad\",\n            \"point\": 2,\n            \"allowed_duration\": 120,\n            \"is_reported\": 0,\n            \"created_at\": \"2023-09-12T08:18:12.000000Z\",\n            \"updated_at\": \"2023-09-12T08:18:12.000000Z\",\n            \"type\": 3,\n            \"multiple_choice\": [\n                {\n                    \"id\": 37,\n                    \"choice\": \"8.4\",\n                    \"is_correct\": 0,\n                    \"question_id\": 43,\n                    \"created_at\": \"2023-09-12T08:18:12.000000Z\",\n                    \"updated_at\": \"2023-09-12T08:18:12.000000Z\"\n                },\n                {\n                    \"id\": 38,\n                    \"choice\": \"9.3\",\n                    \"is_correct\": 0,\n                    \"question_id\": 43,\n                    \"created_at\": \"2023-09-12T08:18:12.000000Z\",\n                    \"updated_at\": \"2023-09-12T08:18:12.000000Z\"\n                },\n                {\n                    \"id\": 39,\n                    \"choice\": \"10.5\",\n                    \"is_correct\": 0,\n                    \"question_id\": 43,\n                    \"created_at\": \"2023-09-12T08:18:12.000000Z\",\n                    \"updated_at\": \"2023-09-12T08:18:12.000000Z\"\n                },\n                {\n                    \"id\": 40,\n                    \"choice\": \"9.8\",\n                    \"is_correct\": 1,\n                    \"question_id\": 43,\n                    \"created_at\": \"2023-09-12T08:18:12.000000Z\",\n                    \"updated_at\": \"2023-09-12T08:18:12.000000Z\"\n                }\n            ]\n        }\n    },\n    \"message\": \"ok\"\n}"
+				},
+				{
+					"name": "Add quiz Order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "4.5",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "Arrange the following numbers in ascending order",
+									"type": "text"
+								},
+								{
+									"key": "point",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "allowed_duration",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "2",
+									"description": "1=> fill blank, 2=> order, 3=> MCQ",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[0][choice]",
+									"value": "8.4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[0][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[1][choice]",
+									"value": "9.3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[1][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[2][choice]",
+									"value": "10.5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[2][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[3][choice]",
+									"value": "9.8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[3][is_correct]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[0][sentence]",
+									"value": "Ahmad go to the **    **",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[0][blank]",
+									"value": "park",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[1][sentence]",
+									"value": "And he drinks **   ** ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[1][blank]",
+									"value": "water",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "order[0][sentence]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "order[0][order]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "order[1][sentence]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "order[1][order]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "order[2][sentence]",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "order[2][order]",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/quiz/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 08:26:29 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 08:26:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 45,\n        \"quiz\": \"test\",\n        \"rate\": 4.5,\n        \"question_id\": 45,\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T08:26:29.000000Z\",\n        \"updated_at\": \"2023-09-12T08:26:29.000000Z\",\n        \"question\": {\n            \"id\": 45,\n            \"question\": \"Arrange the following numbers in ascending order\",\n            \"point\": 2,\n            \"allowed_duration\": 120,\n            \"is_reported\": 0,\n            \"created_at\": \"2023-09-12T08:26:29.000000Z\",\n            \"updated_at\": \"2023-09-12T08:26:29.000000Z\",\n            \"type\": 2,\n            \"order\": [\n                {\n                    \"id\": 4,\n                    \"sentence\": \"3\",\n                    \"order\": 2,\n                    \"question_id\": 45,\n                    \"created_at\": \"2023-09-12T08:26:29.000000Z\",\n                    \"updated_at\": \"2023-09-12T08:26:29.000000Z\"\n                },\n                {\n                    \"id\": 5,\n                    \"sentence\": \"2\",\n                    \"order\": 1,\n                    \"question_id\": 45,\n                    \"created_at\": \"2023-09-12T08:26:29.000000Z\",\n                    \"updated_at\": \"2023-09-12T08:26:29.000000Z\"\n                },\n                {\n                    \"id\": 6,\n                    \"sentence\": \"9\",\n                    \"order\": 3,\n                    \"question_id\": 45,\n                    \"created_at\": \"2023-09-12T08:26:29.000000Z\",\n                    \"updated_at\": \"2023-09-12T08:26:29.000000Z\"\n                }\n            ]\n        }\n    },\n    \"message\": \"ok\"\n}"
+				},
+				{
+					"name": "Add quiz",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "4.5",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "Arrange the following numbers in ascending order",
+									"type": "text"
+								},
+								{
+									"key": "point",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "allowed_duration",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "2",
+									"description": "1=> fill blank, 2=> order, 3=> MCQ",
+									"type": "text"
+								},
+								{
+									"key": "subject_id",
+									"value": "1",
+									"description": "nullable (that only when quiz is not belong to any collection)",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[0][choice]",
+									"value": "8.4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[0][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[1][choice]",
+									"value": "9.3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[1][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[2][choice]",
+									"value": "10.5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[2][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[3][choice]",
+									"value": "9.8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[3][is_correct]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[0][sentence]",
+									"value": "Ahmad go to the **    **",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[0][blank]",
+									"value": "park",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[1][sentence]",
+									"value": "And he drinks **   ** ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[1][blank]",
+									"value": "water",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "order[0][sentence]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "order[0][order]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "order[1][sentence]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "order[1][order]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "order[2][sentence]",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "order[2][order]",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/quiz/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 12:09:36 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 12:09:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 69,\n        \"quiz\": \"test\",\n        \"rate\": 4.5,\n        \"question_id\": 72,\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-25T12:09:36.000000Z\",\n        \"updated_at\": \"2023-09-25T12:09:36.000000Z\",\n        \"subject_id\": null,\n        \"question\": {\n            \"id\": 72,\n            \"question\": \"Arrange the following numbers in ascending order\",\n            \"point\": 3,\n            \"allowed_duration\": 120,\n            \"is_reported\": 0,\n            \"created_at\": \"2023-09-25T12:09:36.000000Z\",\n            \"updated_at\": \"2023-09-25T12:09:36.000000Z\",\n            \"type\": 2,\n            \"order\": [\n                {\n                    \"id\": 85,\n                    \"sentence\": \"3\",\n                    \"order\": 2,\n                    \"question_id\": 72,\n                    \"created_at\": \"2023-09-25T12:09:36.000000Z\",\n                    \"updated_at\": \"2023-09-25T12:09:36.000000Z\"\n                },\n                {\n                    \"id\": 86,\n                    \"sentence\": \"2\",\n                    \"order\": 1,\n                    \"question_id\": 72,\n                    \"created_at\": \"2023-09-25T12:09:36.000000Z\",\n                    \"updated_at\": \"2023-09-25T12:09:36.000000Z\"\n                },\n                {\n                    \"id\": 87,\n                    \"sentence\": \"9\",\n                    \"order\": 3,\n                    \"question_id\": 72,\n                    \"created_at\": \"2023-09-25T12:09:36.000000Z\",\n                    \"updated_at\": \"2023-09-25T12:09:36.000000Z\"\n                }\n            ]\n        }\n    },\n    \"message\": \"ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Show",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/quiz/47",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						"47"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Show",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/quiz/30",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"30"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 08:16:06 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 08:16:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 30,\n        \"quiz\": \"test\",\n        \"rate\": 4.5,\n        \"question_id\": 30,\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T07:30:16.000000Z\",\n        \"updated_at\": \"2023-09-12T07:30:16.000000Z\",\n        \"question\": {\n            \"id\": 30,\n            \"question\": \"Where is Ahmad\",\n            \"point\": 2,\n            \"allowed_duration\": 120,\n            \"is_reported\": 0,\n            \"created_at\": \"2023-09-12T07:30:16.000000Z\",\n            \"updated_at\": \"2023-09-12T07:30:16.000000Z\",\n            \"type\": 1,\n            \"fill_blank\": [\n                {\n                    \"id\": 41,\n                    \"sentence\": \"Ahmad go to the **    **\",\n                    \"blank\": \"park\",\n                    \"question_id\": 30,\n                    \"created_at\": \"2023-09-12T07:30:16.000000Z\",\n                    \"updated_at\": \"2023-09-12T07:30:16.000000Z\"\n                },\n                {\n                    \"id\": 42,\n                    \"sentence\": \"And he drinks **   **\",\n                    \"blank\": \"water\",\n                    \"question_id\": 30,\n                    \"created_at\": \"2023-09-12T07:30:16.000000Z\",\n                    \"updated_at\": \"2023-09-12T07:30:16.000000Z\"\n                }\n            ]\n        }\n    },\n    \"message\": \"Fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete quiz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{teacherToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/quiz/30",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						"30"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/quiz/30",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"30"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 09:44:39 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 09:44:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Deleted successfully\"\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/quiz/30",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"30"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 09:48:08 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 09:48:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Quiz not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Quiz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{teacherToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "put",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "test2",
+							"type": "text"
+						},
+						{
+							"key": "rate",
+							"value": "4.52",
+							"type": "text"
+						},
+						{
+							"key": "question",
+							"value": "What is value of gravity",
+							"type": "text"
+						},
+						{
+							"key": "point",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "allowed_duration",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "3",
+							"description": "1=> fill blank, 2=> order, 3=> MCQ",
+							"type": "text"
+						},
+						{
+							"key": "multipleChoice[0][choice]",
+							"value": "8.4",
+							"type": "text"
+						},
+						{
+							"key": "multipleChoice[0][is_correct]",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "multipleChoice[1][choice]",
+							"value": "9.3",
+							"type": "text"
+						},
+						{
+							"key": "multipleChoice[1][is_correct]",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "multipleChoice[2][choice]",
+							"value": "10.5",
+							"type": "text"
+						},
+						{
+							"key": "multipleChoice[2][is_correct]",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "multipleChoice[3][choice]",
+							"value": "9.8",
+							"type": "text"
+						},
+						{
+							"key": "multipleChoice[3][is_correct]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "fillBlank[0][sentence]",
+							"value": "Ahmad go to the **    **",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "fillBlank[0][blank]",
+							"value": "park",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "fillBlank[1][sentence]",
+							"value": "And he drinks **   ** ",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "fillBlank[1][blank]",
+							"value": "water",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "order[0][sentence]",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "order[0][order]",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "order[1][sentence]",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "order[1][order]",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "order[2][sentence]",
+							"value": "9",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "order[2][order]",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/quiz/48",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						"48"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Quiz",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "test2",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "4.52",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "Arrange the following numbers in ascending order",
+									"type": "text"
+								},
+								{
+									"key": "point",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "allowed_duration",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "multipleChoice[0][choice]",
+									"value": "8.4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[0][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[1][choice]",
+									"value": "9.3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[1][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[2][choice]",
+									"value": "10.5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[2][is_correct]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[3][choice]",
+									"value": "9.8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "multipleChoice[3][is_correct]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[0][sentence]",
+									"value": "Ahmad go to the **    **",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[0][blank]",
+									"value": "park",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[1][sentence]",
+									"value": "And he drinks **   ** ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "fillBlank[1][blank]",
+									"value": "water",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "order[0][sentence]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "order[0][order]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "order[1][sentence]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "order[1][order]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "order[2][sentence]",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "order[2][order]",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/quiz/48",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"48"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 11:00:37 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 11:00:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 48,\n        \"quiz\": \"test2\",\n        \"rate\": 4.52,\n        \"question_id\": 50,\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n        \"updated_at\": \"2023-09-12T10:59:35.000000Z\",\n        \"question\": {\n            \"id\": 50,\n            \"question\": \"Arrange the following numbers in ascending order\",\n            \"point\": 2,\n            \"allowed_duration\": 120,\n            \"is_reported\": 0,\n            \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n            \"updated_at\": \"2023-09-12T10:59:35.000000Z\",\n            \"type\": 2,\n            \"order\": [\n                {\n                    \"id\": 19,\n                    \"sentence\": \"3\",\n                    \"order\": 2,\n                    \"question_id\": 50,\n                    \"created_at\": \"2023-09-12T11:00:37.000000Z\",\n                    \"updated_at\": \"2023-09-12T11:00:37.000000Z\"\n                },\n                {\n                    \"id\": 20,\n                    \"sentence\": \"2\",\n                    \"order\": 1,\n                    \"question_id\": 50,\n                    \"created_at\": \"2023-09-12T11:00:37.000000Z\",\n                    \"updated_at\": \"2023-09-12T11:00:37.000000Z\"\n                },\n                {\n                    \"id\": 21,\n                    \"sentence\": \"9\",\n                    \"order\": 3,\n                    \"question_id\": 50,\n                    \"created_at\": \"2023-09-12T11:00:37.000000Z\",\n                    \"updated_at\": \"2023-09-12T11:00:37.000000Z\"\n                }\n            ]\n        }\n    },\n    \"message\": \"dsa\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Solve quiz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "thinking_duration",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/quiz/solve/47",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						"solve",
+						"47"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Solved quiz",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "thinking_duration",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/quiz/solve/47",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"solve",
+								"47"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 16:58:21 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 16:58:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 47,\n        \"quiz\": \"test\",\n        \"rate\": 4.5,\n        \"question_id\": 49,\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n        \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n        \"question\": {\n            \"id\": 49,\n            \"question\": \"Arrange the following numbers in ascending order\",\n            \"point\": 3,\n            \"allowed_duration\": 120,\n            \"is_reported\": 0,\n            \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"type\": 2\n        }\n    },\n    \"message\": \"Ok\"\n}"
+				},
+				{
+					"name": "Solved quiz",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "thinking_duration",
+									"value": "1002",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/quiz/solve/47",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"solve",
+								"47"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 16:58:47 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 16:58:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"student take a lot of time in thinking\"\n}"
+				},
+				{
+					"name": "Solve quiz",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "thinking_duration",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/quiz/solve/47",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"solve",
+								"47"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Sep 2023 07:12:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Sep 2023 07:12:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Student already solve this quiz before\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Take quiz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/quiz/take/47",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						"take",
+						"47"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Take quiz",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/quiz/take/47",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"take",
+								"47"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 13:38:42 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 13:38:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Quiz took successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Index all teacher quizzes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/quiz/teacher/4",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						"teacher",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/quiz/teacher/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"teacher",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 11:23:49 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 11:23:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 47,\n            \"quiz\": \"test\",\n            \"rate\": 4.5,\n            \"question_id\": 49,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"updated_at\": \"2023-09-12T10:54:36.000000Z\"\n        },\n        {\n            \"id\": 48,\n            \"quiz\": \"test2\",\n            \"rate\": 4.52,\n            \"question_id\": 50,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n            \"updated_at\": \"2023-09-12T10:59:35.000000Z\"\n        }\n    ],\n    \"message\": \"Quizzes fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Index Top 5 quizzes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/quiz/top-quizzes/teacher/4",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						"top-quizzes",
+						"teacher",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Index Top 5 quizzes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/quiz/top-quizzes/teacher/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"top-quizzes",
+								"teacher",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 11:24:27 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 11:24:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 47,\n            \"quiz\": \"test\",\n            \"rate\": 4.5,\n            \"question_id\": 49,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"takens_count\": 2\n        },\n        {\n            \"id\": 48,\n            \"quiz\": \"test2\",\n            \"rate\": 4.52,\n            \"question_id\": 50,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n            \"updated_at\": \"2023-09-12T10:59:35.000000Z\",\n            \"takens_count\": 0\n        }\n    ],\n    \"message\": \"Top quizzes fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Search For quiz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/quiz/search/?name=t",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "t"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search For quiz",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/quiz/search/?name=tes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "tes"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 14:13:32 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 14:13:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 47,\n            \"quiz\": \"test\",\n            \"rate\": 4.5,\n            \"question_id\": 49,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"updated_at\": \"2023-09-12T10:54:36.000000Z\"\n        },\n        {\n            \"id\": 48,\n            \"quiz\": \"test2\",\n            \"rate\": 4.52,\n            \"question_id\": 50,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n            \"updated_at\": \"2023-09-12T10:59:35.000000Z\"\n        }\n    ],\n    \"message\": \"Quizzes fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Index all quizzes in speciality",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/quiz/speciality/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						"speciality",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/quiz/speciality/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"speciality",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 13:15:12 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 13:15:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 47,\n            \"quiz\": \"test\",\n            \"rate\": 4.5,\n            \"question_id\": 49,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"question\": {\n                \"id\": 49,\n                \"question\": \"Arrange the following numbers in ascending order\",\n                \"point\": 3,\n                \"allowed_duration\": 120,\n                \"is_reported\": 0,\n                \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"type\": 2\n            },\n            \"teacher\": {\n                \"id\": 4,\n                \"about\": \"Hello world\",\n                \"is_approved\": 1,\n                \"user_id\": 15,\n                \"speciality_id\": 1,\n                \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"updated_at\": \"2023-09-21T11:46:29.000000Z\"\n            }\n        },\n        {\n            \"id\": 48,\n            \"quiz\": \"test2\",\n            \"rate\": 4.52,\n            \"question_id\": 50,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n            \"updated_at\": \"2023-09-12T10:59:35.000000Z\",\n            \"question\": {\n                \"id\": 50,\n                \"question\": \"What is value of gravity\",\n                \"point\": 2,\n                \"allowed_duration\": 100,\n                \"is_reported\": 0,\n                \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n                \"updated_at\": \"2023-09-12T17:25:20.000000Z\",\n                \"type\": 3\n            },\n            \"teacher\": {\n                \"id\": 4,\n                \"about\": \"Hello world\",\n                \"is_approved\": 1,\n                \"user_id\": 15,\n                \"speciality_id\": 1,\n                \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"updated_at\": \"2023-09-21T11:46:29.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"Quizzes fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Index all quizzes in subject",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/quiz/subject/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"quiz",
+						"subject",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/quiz/speciality/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"speciality",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 13:15:12 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2023 13:15:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 47,\n            \"quiz\": \"test\",\n            \"rate\": 4.5,\n            \"question_id\": 49,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n            \"question\": {\n                \"id\": 49,\n                \"question\": \"Arrange the following numbers in ascending order\",\n                \"point\": 3,\n                \"allowed_duration\": 120,\n                \"is_reported\": 0,\n                \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"type\": 2\n            },\n            \"teacher\": {\n                \"id\": 4,\n                \"about\": \"Hello world\",\n                \"is_approved\": 1,\n                \"user_id\": 15,\n                \"speciality_id\": 1,\n                \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"updated_at\": \"2023-09-21T11:46:29.000000Z\"\n            }\n        },\n        {\n            \"id\": 48,\n            \"quiz\": \"test2\",\n            \"rate\": 4.52,\n            \"question_id\": 50,\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n            \"updated_at\": \"2023-09-12T10:59:35.000000Z\",\n            \"question\": {\n                \"id\": 50,\n                \"question\": \"What is value of gravity\",\n                \"point\": 2,\n                \"allowed_duration\": 100,\n                \"is_reported\": 0,\n                \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n                \"updated_at\": \"2023-09-12T17:25:20.000000Z\",\n                \"type\": 3\n            },\n            \"teacher\": {\n                \"id\": 4,\n                \"about\": \"Hello world\",\n                \"is_approved\": 1,\n                \"user_id\": 15,\n                \"speciality_id\": 1,\n                \"created_at\": \"2023-09-11T16:46:38.000000Z\",\n                \"updated_at\": \"2023-09-21T11:46:29.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"Quizzes fetched successfully\"\n}"
+				}
+			]
+		}
+	]
+}

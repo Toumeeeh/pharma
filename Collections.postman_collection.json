@@ -1,0 +1,1426 @@
+{
+	"info": {
+		"_postman_id": "ea199261-b55f-4e7d-9a3a-172eb5775734",
+		"name": "Collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13275790"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/collection",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collection"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Index",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/collection",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 17:58:49 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 17:58:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"collection\": \"Hello world\",\n            \"rate\": 4.2,\n            \"tips\": \"Use calculator\",\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T17:58:05.000000Z\",\n            \"updated_at\": \"2023-09-12T17:58:05.000000Z\",\n            \"subjects\": [\n                {\n                    \"id\": 1,\n                    \"subject\": \"ثقافة عامة\",\n                    \"speciality_id\": 1,\n                    \"created_at\": \"2023-09-12T17:55:53.000000Z\",\n                    \"updated_at\": \"2023-09-12T17:55:53.000000Z\",\n                    \"pivot\": {\n                        \"collection_id\": 5,\n                        \"subject_id\": 1\n                    }\n                }\n            ]\n        }\n    ],\n    \"message\": \"collections fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{teacherToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Hello world",
+							"type": "text"
+						},
+						{
+							"key": "rate",
+							"value": "4.2",
+							"type": "text"
+						},
+						{
+							"key": "tips",
+							"value": "Use calculator",
+							"type": "text"
+						},
+						{
+							"key": "subjects[0]",
+							"value": "1",
+							"description": "That for subject id",
+							"type": "text"
+						},
+						{
+							"key": "quizzes[0][id]",
+							"value": "47",
+							"description": "That for quiz id",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "quizzes[1]",
+							"value": "68",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/collection/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collection",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add collection",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Hello world",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "4.2",
+									"type": "text"
+								},
+								{
+									"key": "tips",
+									"value": "Use calculator",
+									"type": "text"
+								},
+								{
+									"key": "subjects[0]",
+									"value": "1",
+									"description": "That for subject id",
+									"type": "text"
+								},
+								{
+									"key": "quizzes[0]",
+									"value": "47",
+									"description": "That for quiz id",
+									"type": "text"
+								},
+								{
+									"key": "quizzes[1]",
+									"value": "48",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/collection/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 17:58:05 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 17:58:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"collection\": \"Hello world\",\n        \"rate\": 4.2,\n        \"tips\": \"Use calculator\",\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T17:58:05.000000Z\",\n        \"updated_at\": \"2023-09-12T17:58:05.000000Z\",\n        \"quizzes\": [\n            {\n                \"id\": 47,\n                \"quiz\": \"test\",\n                \"rate\": 4.5,\n                \"question_id\": 49,\n                \"teacher_id\": 4,\n                \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"pivot\": {\n                    \"collection_id\": 5,\n                    \"quiz_id\": 47\n                },\n                \"question\": {\n                    \"id\": 49,\n                    \"question\": \"Arrange the following numbers in ascending order\",\n                    \"point\": 3,\n                    \"allowed_duration\": 120,\n                    \"is_reported\": 0,\n                    \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                    \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                    \"type\": 2\n                }\n            },\n            {\n                \"id\": 48,\n                \"quiz\": \"test2\",\n                \"rate\": 4.52,\n                \"question_id\": 50,\n                \"teacher_id\": 4,\n                \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n                \"updated_at\": \"2023-09-12T10:59:35.000000Z\",\n                \"pivot\": {\n                    \"collection_id\": 5,\n                    \"quiz_id\": 48\n                },\n                \"question\": {\n                    \"id\": 50,\n                    \"question\": \"What is value of gravity\",\n                    \"point\": 2,\n                    \"allowed_duration\": 100,\n                    \"is_reported\": 0,\n                    \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n                    \"updated_at\": \"2023-09-12T17:25:20.000000Z\",\n                    \"type\": 3\n                }\n            }\n        ],\n        \"subjects\": [\n            {\n                \"id\": 1,\n                \"subject\": \"ثقافة عامة\",\n                \"speciality_id\": 1,\n                \"created_at\": \"2023-09-12T17:55:53.000000Z\",\n                \"updated_at\": \"2023-09-12T17:55:53.000000Z\",\n                \"pivot\": {\n                    \"collection_id\": 5,\n                    \"subject_id\": 1\n                }\n            }\n        ]\n    },\n    \"message\": \"ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Show",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/collection/5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collection",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Show",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/collection/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 17:59:11 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 17:59:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "54"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"collection\": \"Hello world\",\n        \"rate\": 4.2,\n        \"tips\": \"Use calculator\",\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T17:58:05.000000Z\",\n        \"updated_at\": \"2023-09-12T17:58:05.000000Z\",\n        \"quizzes\": [\n            {\n                \"id\": 47,\n                \"quiz\": \"test\",\n                \"rate\": 4.5,\n                \"question_id\": 49,\n                \"teacher_id\": 4,\n                \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"pivot\": {\n                    \"collection_id\": 5,\n                    \"quiz_id\": 47\n                },\n                \"question\": {\n                    \"id\": 49,\n                    \"question\": \"Arrange the following numbers in ascending order\",\n                    \"point\": 3,\n                    \"allowed_duration\": 120,\n                    \"is_reported\": 0,\n                    \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                    \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                    \"type\": 2\n                }\n            },\n            {\n                \"id\": 48,\n                \"quiz\": \"test2\",\n                \"rate\": 4.52,\n                \"question_id\": 50,\n                \"teacher_id\": 4,\n                \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n                \"updated_at\": \"2023-09-12T10:59:35.000000Z\",\n                \"pivot\": {\n                    \"collection_id\": 5,\n                    \"quiz_id\": 48\n                },\n                \"question\": {\n                    \"id\": 50,\n                    \"question\": \"What is value of gravity\",\n                    \"point\": 2,\n                    \"allowed_duration\": 100,\n                    \"is_reported\": 0,\n                    \"created_at\": \"2023-09-12T10:54:51.000000Z\",\n                    \"updated_at\": \"2023-09-12T17:25:20.000000Z\",\n                    \"type\": 3\n                }\n            }\n        ],\n        \"subjects\": [\n            {\n                \"id\": 1,\n                \"subject\": \"ثقافة عامة\",\n                \"speciality_id\": 1,\n                \"created_at\": \"2023-09-12T17:55:53.000000Z\",\n                \"updated_at\": \"2023-09-12T17:55:53.000000Z\",\n                \"pivot\": {\n                    \"collection_id\": 5,\n                    \"subject_id\": 1\n                }\n            }\n        ]\n    },\n    \"message\": \"Fetched successfully\"\n}"
+				},
+				{
+					"name": "Show",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/collection/52",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								"52"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 17:59:25 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 17:59:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "53"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{teacherToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "put",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Hello world",
+							"type": "text"
+						},
+						{
+							"key": "rate",
+							"value": "4.2",
+							"type": "text"
+						},
+						{
+							"key": "tips",
+							"value": "Use calculator",
+							"type": "text"
+						},
+						{
+							"key": "subjects[0]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "quizzes[0]",
+							"value": "47",
+							"type": "text"
+						},
+						{
+							"key": "quizzes[1]",
+							"value": "48",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/collection/5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collection",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Collection",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Hello world",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "4.2",
+									"type": "text"
+								},
+								{
+									"key": "tips",
+									"value": "Use calculator",
+									"type": "text"
+								},
+								{
+									"key": "subjects[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "quizzes[0]",
+									"value": "47",
+									"type": "text"
+								},
+								{
+									"key": "quizzes[1]",
+									"value": "48",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/collection/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 18:48:32 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 18:48:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"collection\": \"Hello world\",\n        \"rate\": 4.2,\n        \"tips\": \"Use calculator\",\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T17:58:05.000000Z\",\n        \"updated_at\": \"2023-09-12T17:58:05.000000Z\",\n        \"quizzes\": [\n            {\n                \"id\": 47,\n                \"quiz\": \"test\",\n                \"rate\": 4.5,\n                \"question_id\": 49,\n                \"teacher_id\": 4,\n                \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                \"pivot\": {\n                    \"collection_id\": 5,\n                    \"quiz_id\": 47\n                },\n                \"question\": {\n                    \"id\": 49,\n                    \"question\": \"Arrange the following numbers in ascending order\",\n                    \"point\": 3,\n                    \"allowed_duration\": 120,\n                    \"is_reported\": 0,\n                    \"created_at\": \"2023-09-12T10:54:36.000000Z\",\n                    \"updated_at\": \"2023-09-12T10:54:36.000000Z\",\n                    \"type\": 2\n                }\n            }\n        ],\n        \"subjects\": [\n            {\n                \"id\": 1,\n                \"subject\": \"ثقافة عامة\",\n                \"speciality_id\": 1,\n                \"created_at\": \"2023-09-12T17:55:53.000000Z\",\n                \"updated_at\": \"2023-09-12T17:55:53.000000Z\",\n                \"pivot\": {\n                    \"collection_id\": 5,\n                    \"subject_id\": 1\n                }\n            }\n        ]\n    },\n    \"message\": \"dsa\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{teacherToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/collection/6",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collection",
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete collection",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/collection/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								"6"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 18:01:37 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 18:01:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Deleted successfully\"\n}"
+				},
+				{
+					"name": "Delete collection",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/collection/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								"6"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 18:01:46 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 18:01:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Collection not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Toggle favorite",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/collection/favorite/5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collection",
+						"favorite",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Favorite",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/collection/favorite/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								"favorite",
+								"5"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 18:50:14 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 18:50:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Collection marked favorite successfully\"\n}"
+				},
+				{
+					"name": "Unfavorite",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/collection/favorite/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								"favorite",
+								"5"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 18:50:56 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 18:50:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Collection un marked favorite successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Take collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/collection/take/5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collection",
+						"take",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Take quiz",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/quiz/take/47",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"quiz",
+								"take",
+								"47"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 13:38:42 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Sep 2023 13:38:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Quiz took successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add quizzes to collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{studentToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "quizzes[0]",
+							"value": "48",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/collection/add-questions/5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collection",
+						"add-questions",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add questions to collection",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "quizzes[0]",
+									"value": "48",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/collection/add-questions/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								"add-questions",
+								"5"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 08:34:34 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 08:34:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Quizzes attached successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Index teacher collection",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/collection/teacher/4",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collection",
+						"teacher",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/collection/teacher/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								"teacher",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 10:52:45 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 10:52:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"collection\": \"Hello world\",\n            \"rate\": 4.2,\n            \"tips\": \"Use calculator\",\n            \"teacher_id\": 4,\n            \"created_at\": \"2023-09-12T17:58:05.000000Z\",\n            \"updated_at\": \"2023-09-12T17:58:05.000000Z\"\n        }\n    ],\n    \"message\": \"Collections fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get top collections",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/collection/top-subject/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collection",
+						"top-subject",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get top collections",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/collection/top-subject/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"collection",
+								"top-subject",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 11:04:18 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Sep 2023 11:04:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 5,\n        \"collection\": \"Hello world\",\n        \"rate\": 4.2,\n        \"tips\": \"Use calculator\",\n        \"teacher_id\": 4,\n        \"created_at\": \"2023-09-12T17:58:05.000000Z\",\n        \"updated_at\": \"2023-09-12T17:58:05.000000Z\",\n        \"takens_count\": 1\n    }\n]"
+				}
+			]
+		}
+	]
+}
